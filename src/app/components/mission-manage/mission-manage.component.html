@@ -1,0 +1,29 @@
+<app-add-mission></app-add-mission>
+<div class="p-3">
+  <p-table [value]="missions">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Görev No</th>
+        <th>Tür</th>
+        <th>İçerik</th>
+        <th>Atanan Kişi</th>
+        <th>Durum</th>
+        <th>İşlem</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-task>
+      <tr>
+        <td>{{ task.id }}</td>
+        <td>{{ task.type }}</td>
+        <td>{{ task.content }}</td>
+        <td>{{ task.assignedTo }}</td>
+        <td>{{ task.status }}</td>
+        <td>
+          <button pButton *ngIf="task.status !== 'Onaylandı'" class="p-button-success button" (click)="markCompleted(task.id)">Tamamla</button>
+          <button pButton *ngIf="task.status == 'Onaylandı'" class="p-button-success button" >Onaylandı</button>
+        </td>
+
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

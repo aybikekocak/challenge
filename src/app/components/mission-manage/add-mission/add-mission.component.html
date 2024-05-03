@@ -1,0 +1,25 @@
+
+<div class="col-12 page">
+  <div class="col-6">
+  <p-card>
+  <ng-template pTemplate="content">
+    <div class="mt-2 mb-2">  <h3 > Görev Ekle </h3></div>
+    <form (submit)="addMission()">
+      <div class="p-field mb-2">
+      <input pInputText type="text" [(ngModel)]="newMission.type" name="type"  placeholder="Tür" required>
+      </div>
+      <div class="p-field mb-2">
+      <input pInputText type="text" [(ngModel)]="newMission.content" name="content" placeholder="İçerik" required>
+      </div>
+      <div class="p-field mb-2">
+      <input pInputText type="text" [(ngModel)]="newMission.assignedTo" name="assignedTo" placeholder="Atanan Kişi" required>
+      </div>
+      <div class="add">
+      <button pButton class="p-button p-button-secondary add" type="submit">Görev Ekle</button>
+      </div>
+    </form>
+  </ng-template>
+</p-card>
+  </div>
+<app-charts></app-charts>
+</div>

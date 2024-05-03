@@ -1,0 +1,11 @@
+<h1>CARD B</h1>
+<div *ngFor="let card of cards" class="mt-2">
+  <div class="card d-flex justify-content-center">
+    <h2 class="d-flex justify-content-center">{{ card.id }}</h2>
+    <p class="d-flex justify-content-center">{{ card.content }}</p>
+    <div class="mb-2 d-flex justify-content-evenly">
+      <button pButton (click)="addCard()" class="p-button-success">Kart Ekle</button>
+      <button pButton (click)="delete(card.id)" class="p-button-danger">Kart Çıkar</button>
+    </div>
+  </div>
+</div>

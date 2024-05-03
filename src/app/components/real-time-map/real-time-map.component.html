@@ -1,0 +1,24 @@
+<div class="d-flex flex-column">
+<div id="viewDiv" style="height: 600px;"></div>
+
+<div class="table-container mt-5 p-5">
+  <p-table [value]="selectedFeature">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Özellik Adı</th>
+        <th>Değer</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-feature>
+      <tr [class.selected]="feature === selectedFeature">
+        <td>Latitude</td>
+        <td>{{ feature?.geometry?.latitude }}</td>
+      </tr>
+      <tr [class.selected]="feature === selectedFeature">
+        <td>Longitude</td>
+        <td>{{ feature?.geometry?.longitude }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+</div>

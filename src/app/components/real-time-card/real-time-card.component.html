@@ -1,0 +1,4 @@
+<div class="p-2">
+  <app-list-cards *ngFor="let card of cards" [title]="card.title" [content]="card.content" (delete)="deleteCard(card)"></app-list-cards>
+  <button pButton class="p-button-success p-2" (click)="addCards()">Yeni Ekle</button>
+</div>
